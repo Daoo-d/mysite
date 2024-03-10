@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css_styling %}
+    <link rel="stylesheet" href="{% static "blog/style.css" %}">
+{% endblock css_styling %}
+
+
+{% block page_title %}
+All Posts
+{% endblock page_title %}
+
+{% block content %}
+<header id="main-navigation">
+    <h1><a href="{% url "start-project" %}">Daud's Blog</a></h1>
+    <nav>
+        <a href="{% url "posts-page" %}">All Posts</a>
+    </nav>
+</header>
+
+<section id="all-posts">    
+    <h2>All Posts</h2>
+    <ul>
+        {% for post in allPost %}
+        {% include "blog/include/posts.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+
+{% endblock content %}
+

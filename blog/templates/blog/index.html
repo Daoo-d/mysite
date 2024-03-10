@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_styling %}
+    <link rel="stylesheet" href="{% static "blog/style.css" %}">
+{% endblock css_styling %}
+
+
+{% block page_title %}
+My Blog
+{% endblock page_title %}
+
+{% block content %}
+
+<header id="main-navigation">
+    <h1><a href="{% url "start-project" %}">Daud's Blog</a></h1>
+    <nav>
+        <a href="{% url "posts-page" %}">All Posts</a>
+    </nav>
+</header>
+
+<section id = "welcome">
+    <header>
+        <img src="{% static "blog/images/max.png" %}" alt="The author of the Blog">
+        <h2>Dawood's Blog</h2>
+    </header>
+    <p>Hi,I am Dawood and I love to blog about tech and the world</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My latest Posts</h2>
+    <ul>
+        {% for post in latest_posts %}
+        {% include "blog/include/posts.html" %}
+        {% endfor %}
+        
+    </ul>
+</section>
+
+<section id="about">
+    
+    <h2>What I do</h2>
+    <p>I love Proogramming I love to help otherrs and I enjoy exploring new technologies in general!</p>
+    <p>My goal is to keep on growing as a developer - and if I could help you do the same</p>
+</section>
+
+
+{% endblock content %}
+
+
+
