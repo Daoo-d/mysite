@@ -32,17 +32,17 @@ all_posts = [
         "title": "Programming Is Great!",
         "excerpt": "Did you ever spend hours searching that one error in your code? Yep - that's what happened to me yesterday...",
         "content": """
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
-          aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
-          velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
+            aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
+            velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
-          aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
-          velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
+            aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
+            velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
-          aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
-          velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nobis
+            aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
+            velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
         """
     },
     {
