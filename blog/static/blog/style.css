@@ -130,6 +130,7 @@
 #summary h2 {
   color: white;
   font-size: 4.5rem;
+  margin-bottom: 1.5rem;
 }
 
 #summary article {
@@ -154,10 +155,20 @@
 #summary address {
   font-weight: bold;
 }
+#summary a{
+  text-decoration: none;
+  color: #e48900;
+}
 
 #summary time {
   font-weight: bold;
 } 
+.tags{
+  background-color: white;
+  color: #e48900;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
 
 main {
   width: 90%;
