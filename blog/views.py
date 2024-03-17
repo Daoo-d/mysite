@@ -1,17 +1,33 @@
+from typing import Any
 from django.shortcuts import render,get_object_or_404
 from .models import Post,Author,Tag
+from django.views.generic import ListView,DetailView
 
 # Create your views here.
-def start_project(request):
-    all_post = Post.objects.order_by('-date')[:3]
-    # lattest_posts = sorted(every_post_list,key=get_date)
-    # updated_list = lattest_posts[-3:]
-    return render(request,"blog/index.html",{"latest_posts":all_post})
+class PostList(ListView):
+    model = Post
+    template_name = "blog/allPosts.html"
+    ordering = ['-date']
+    context_object_name = "allPost"
 
-def posts(request):
-    all_post = Post.objects.all().order_by('-date')
-    return render(request,"blog/allPosts.html",{"allPost":all_post})
+class StartProject(ListView):
+    model = Post
+    template_name = "blog/index.html"  
+    ordering = ['-date']
+    context_object_name = "latest_posts"
 
-def individual_posts(request,slug):
-    identified_post = get_object_or_404(Post,slug=slug)
-    return render(request,"blog/postDetails.html",{"post":identified_post,"post_tag":identified_post.tag.all()})
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        data = queryset[:3]
+        return data
+      
+class IndividualPost(DetailView):
+    template_name = "blog/postDetails.html"
+    model = Post
+
+    def get_context_data(self, **kwargs) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        loaded_obj = self.object
+        context["post_tag"] = loaded_obj.tag.all()
+        return context
+    
